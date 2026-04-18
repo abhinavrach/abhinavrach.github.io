@@ -92,3 +92,35 @@ h2 {
         background: #00eaff;
         color: black;
     }
+
+/* spacing improvements */
+.section {
+    margin: 80px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* card animation */
+.card {
+    transition: 0.3s;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+header a {
+    color: #00eaff;
+    text-decoration: none;
+    border-bottom: 1px solid #00eaff;
+}
+
+    header a:hover {
+        color: white;
+    }
+
+a {
+    color: red !important;
+}
