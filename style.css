@@ -135,3 +135,21 @@ a {
         border-bottom: 1px solid white;
         text-shadow: 0 0 10px white;
     }
+.card img {
+    width: 100%;
+    height: 180px; /* FIXED height */
+    object-fit: cover; /* crops image nicely */
+    border-radius: 6px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
