@@ -1,92 +1,123 @@
-/* version 2 */
+/* ================= GLOBAL ================= */
 body {
-  margin: 0;
-  font-family: monospace;
-  background: #05070a;
-  color: #00eaff;
-  overflow-x: hidden;
+    font-family: 'Segoe UI', monospace;
+    line-height: 1.6;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= BACKGROUND ================= */
 #bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
+/* ================= HEADER ================= */
 header {
-  text-align: center;
-  padding: 40px;
+    text-align: center;
+    padding: 60px 20px;
 }
+
+    header p {
+        opacity: 0.8;
+        font-size: 14px;
+    }
 
 h1 {
-  font-size: 50px;
-  text-shadow: 0 0 10px #00eaff;
+    font-size: 50px;
+    text-shadow: 0 0 10px #00eaff;
 }
 
+/* ================= SECTIONS ================= */
 .section {
-  padding: 30px;
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 h2 {
-  border-bottom: 2px solid #00eaff;
-  padding-bottom: 5px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00eaff;
+    padding-bottom: 5px;
 }
 
+h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* ================= GRID ================= */
 .grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
+/* ================= CARD ================= */
 .card {
-  border: 1px solid #00eaff;
-  padding: 20px;
-  width: 260px;
-  background: rgba(0, 234, 255, 0.03);
-  transition: 0.3s;
+    border: 1px solid rgba(0, 234, 255, 0.5);
+    padding: 20px;
+    width: 260px;
+    background: rgba(0, 234, 255, 0.02);
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card:hover {
-  background: #00eaff;
-  color: black;
-  transform: translateY(-8px);
-}
-/* IMAGE */
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
+        background: rgba(0, 234, 255, 0.08);
+    }
+
+/* ================= IMAGES ================= */
 .card-img {
     width: 100%;
-    height: 140px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 10px;
+    transition: 0.3s;
 }
 
-/* TAGS */
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+/* ================= TAGS ================= */
 .tags {
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
 }
 
     .tags span {
         border: 1px solid #00eaff;
-        padding: 3px 8px;
-        margin-right: 5px;
+        padding: 4px 10px;
+        border-radius: 6px;
         font-size: 12px;
+        white-space: nowrap;
     }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 6px 12px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
     border: 1px solid #00eaff;
-    color: #00eaff;
+    border-radius: 6px;
     text-decoration: none;
-    transition: 0.3s;
-}
-.card:hover .btn {
-    background: black;
     color: #00eaff;
-    border-color: black;
+    transition: 0.3s;
 }
 
     .btn:hover {
@@ -94,34 +125,13 @@ h2 {
         color: black;
     }
 
-/* spacing improvements */
-.section {
-    margin: 80px 0;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-/* card animation */
-.card {
-    transition: 0.3s;
-}
-
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-header a {
+.card:hover .btn {
+    background: black;
     color: #00eaff;
-    text-decoration: none;
-    border-bottom: 1px solid #00eaff;
+    border-color: black;
 }
 
-    header a:hover {
-        color: white;
-    }
-
+/* ================= LINKS ================= */
 a {
     color: #00eaff;
     text-decoration: none;
@@ -135,58 +145,12 @@ a {
         border-bottom: 1px solid white;
         text-shadow: 0 0 10px white;
     }
-.card img {
-    width: 100%;
-    height: 180px; /* FIXED height */
-    object-fit: cover; /* crops image nicely */
-    border-radius: 6px;
+
+header a {
+    color: #00eaff;
+    border-bottom: 1px solid #00eaff;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    padding: 16px;
-}
-
-.project-img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 12px;
-}
-
-/* FIX TAG LAYOUT */
-.tags {
-    display: flex;
-    flex-wrap: wrap; /* allows wrapping cleanly */
-    gap: 8px; /* equal spacing */
-    margin: 12px 0;
-}
-
-    .tags span {
-        border: 1px solid #00e6ff;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 14px;
-        white-space: nowrap; /* prevents breaking words */
+    header a:hover {
+        color: white;
     }
-
-/* FIX BUTTON */
-.btn {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #00e6ff;
-    border-radius: 6px;
-    text-decoration: none;
-}
