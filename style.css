@@ -1,7 +1,9 @@
-/* ================= GLOBAL ================= */
+﻿/* ================= GLOBAL ================= */
 body {
     font-family: 'Segoe UI', monospace;
     line-height: 1.6;
+    background-color: #000; /* 🔥 THIS FIXES IT */
+    color: #ffffff; /* ensures text is visible */
 }
 
 html {
@@ -155,6 +157,7 @@ header a {
         color: white;
     }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .section {
         padding: 30px 20px;
