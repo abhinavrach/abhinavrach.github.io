@@ -154,3 +154,18 @@ header a {
     header a:hover {
         color: white;
     }
+
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 20px;
+    }
+
+    .grid {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
